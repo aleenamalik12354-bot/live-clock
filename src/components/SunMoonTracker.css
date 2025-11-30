@@ -1,0 +1,319 @@
+.sun-moon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+.sun-moon-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.sky-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.sky-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: background 2s ease;
+}
+
+/* Sunrise phase */
+.phase-sunrise .sky-background {
+    background: linear-gradient(to bottom,
+            #FF6B9D 0%,
+            #FFA07A 30%,
+            #FFD700 60%,
+            #87CEEB 100%);
+}
+
+/* Day phase */
+.phase-day .sky-background {
+    background: linear-gradient(to bottom,
+            #1e3a8a 0%,
+            #3b82f6 30%,
+            #60a5fa 60%,
+            #93c5fd 100%);
+}
+
+/* Sunset phase */
+.phase-sunset .sky-background {
+    background: linear-gradient(to bottom,
+            #4a1a4a 0%,
+            #ff6b35 30%,
+            #ffa500 50%,
+            #ff6347 70%,
+            #ff69b4 100%);
+}
+
+/* Night phase */
+.phase-night .sky-background {
+    background: linear-gradient(to bottom,
+            #000428 0%,
+            #004e92 50%,
+            #1a1a2e 100%);
+}
+
+.arc-path {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+body.dark .arc-path {
+    stroke: #00CED1;
+}
+
+body.light .arc-path {
+    stroke: #333;
+}
+
+/* Celestial body */
+.celestial-body {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: all 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 10;
+}
+
+/* Sun */
+.sun {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    animation: sunRotate 20s linear infinite;
+}
+
+@keyframes sunRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sun-core {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #FFF9E6 0%, #FFD700 50%, #FFA500 100%);
+    box-shadow:
+        0 0 30px rgba(255, 215, 0, 0.8),
+        0 0 60px rgba(255, 215, 0, 0.6),
+        0 0 90px rgba(255, 165, 0, 0.4);
+    animation: sunPulse 3s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow:
+            0 0 30px rgba(255, 215, 0, 0.8),
+            0 0 60px rgba(255, 215, 0, 0.6),
+            0 0 90px rgba(255, 165, 0, 0.4);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow:
+            0 0 40px rgba(255, 215, 0, 1),
+            0 0 80px rgba(255, 215, 0, 0.8),
+            0 0 120px rgba(255, 165, 0, 0.6);
+    }
+}
+
+.sun-ray {
+    position: absolute;
+    width: 4px;
+    height: 120px;
+    background: linear-gradient(to bottom,
+            rgba(255, 215, 0, 0.8) 0%,
+            rgba(255, 215, 0, 0) 100%);
+    top: 50%;
+    left: 50%;
+    margin-left: -2px;
+    margin-top: -60px;
+    transform-origin: 50% 60px;
+    border-radius: 2px;
+    animation: rayPulse 3s ease-in-out infinite;
+}
+
+@keyframes rayPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        height: 120px;
+    }
+
+    50% {
+        opacity: 1;
+        height: 140px;
+    }
+}
+
+/* Moon */
+.moon {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+.moon-surface {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+            #F0F0F0 0%,
+            #E0E0E0 40%,
+            #C0C0C0 100%);
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(255, 255, 255, 0.4),
+        inset -10px -10px 20px rgba(0, 0, 0, 0.2);
+    animation: moonGlow 4s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes moonGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 30px rgba(255, 255, 255, 0.6),
+            0 0 60px rgba(255, 255, 255, 0.4),
+            inset -10px -10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 40px rgba(255, 255, 255, 0.8),
+            0 0 80px rgba(255, 255, 255, 0.6),
+            inset -10px -10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Moon craters */
+.crater {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.crater-1 {
+    width: 15px;
+    height: 15px;
+    top: 20%;
+    left: 30%;
+}
+
+.crater-2 {
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 60%;
+}
+
+.crater-3 {
+    width: 12px;
+    height: 12px;
+    top: 65%;
+    left: 25%;
+}
+
+/* Horizon */
+.horizon {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(34, 139, 34, 0.3) 50%,
+            rgba(34, 139, 34, 0.6) 100%);
+    z-index: 5;
+}
+
+.phase-night .horizon {
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(20, 20, 40, 0.5) 50%,
+            rgba(10, 10, 20, 0.8) 100%);
+}
+
+/* Info section */
+.sun-moon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.time-of-day {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+body.dark .time-of-day {
+    color: #00CED1;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.6);
+}
+
+.current-time {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+body.dark .current-time {
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .sky-container {
+        height: 280px;
+    }
+
+    .sun {
+        width: 60px;
+        height: 60px;
+    }
+
+    .moon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .sun-ray {
+        height: 90px;
+    }
+
+    .time-of-day {
+        font-size: 1.2rem;
+    }
+
+    .current-time {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,138 @@
+.world-clock-widget {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    min-width: 350px;
+    max-width: 500px;
+}
+
+.world-clock-widget h3 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.user-location-info {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 206, 209, 0.2);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.city-selector {
+    margin-bottom: 1rem;
+}
+
+.city-dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    color: inherit;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    outline: none;
+    cursor: pointer;
+}
+
+.city-dropdown:focus {
+    border-color: #00CED1;
+    box-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+}
+
+.cities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.no-cities {
+    text-align: center;
+    opacity: 0.5;
+    font-style: italic;
+    padding: 2rem 0;
+}
+
+.city-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.city-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00CED1;
+    box-shadow: 0 0 15px rgba(0, 206, 209, 0.3);
+}
+
+.city-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.city-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.city-time {
+    font-size: 1.5rem;
+    font-family: 'Orbitron', monospace;
+    letter-spacing: 0.05em;
+}
+
+body.dark .city-time {
+    color: #00CED1;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+}
+
+.city-remove {
+    background: transparent;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.city-remove:hover {
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+body.dark .world-clock-widget {
+    background: rgba(0, 20, 20, 0.8);
+    border-color: #00CED1;
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.3);
+}
+
+body.light .world-clock-widget {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light .city-dropdown {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #333;
+}

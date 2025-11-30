@@ -1,0 +1,237 @@
+.floating-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    perspective: 1500px;
+}
+
+.cards-display {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.time-card {
+    width: 180px;
+    height: 240px;
+    perspective: 1000px;
+    animation: cardFloat 4s ease-in-out infinite;
+}
+
+.time-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.time-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.time-card:nth-child(5) {
+    animation-delay: 1s;
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotateY(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotateY(5deg);
+    }
+
+    50% {
+        transform: translateY(0) rotateY(0deg);
+    }
+
+    75% {
+        transform: translateY(-10px) rotateY(-5deg);
+    }
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+body.light .card-inner {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+body.dark .card-inner {
+    background: rgba(0, 20, 20, 0.7);
+    border: 2px solid #00CED1;
+    box-shadow:
+        0 0 30px rgba(0, 206, 209, 0.4),
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(0, 206, 209, 0.3) inset;
+    backdrop-filter: blur(10px);
+}
+
+.time-card:hover .card-inner {
+    transform: translateY(-20px) rotateY(10deg) scale(1.05);
+}
+
+body.dark .time-card:hover .card-inner {
+    box-shadow:
+        0 0 50px rgba(0, 206, 209, 0.6),
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(0, 206, 209, 0.5) inset;
+}
+
+.card-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+.card-value {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+body.dark .card-value {
+    color: #00CED1;
+    text-shadow:
+        0 0 20px rgba(0, 206, 209, 0.8),
+        0 0 40px rgba(0, 206, 209, 0.5);
+}
+
+.card-icon {
+    font-size: 2rem;
+    opacity: 0.6;
+    filter: grayscale(0.3);
+}
+
+.card-separator {
+    font-size: 4rem;
+    font-weight: 700;
+    opacity: 0.5;
+    animation: separatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes separatorPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+body.dark .card-separator {
+    color: #00CED1;
+    text-shadow: 0 0 15px rgba(0, 206, 209, 0.6);
+}
+
+.floating-date {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* Color variations for each card */
+.hours-card .card-inner {
+    animation: cardGlow1 3s ease-in-out infinite;
+}
+
+.minutes-card .card-inner {
+    animation: cardGlow2 3s ease-in-out infinite 0.5s;
+}
+
+.seconds-card .card-inner {
+    animation: cardGlow3 3s ease-in-out infinite 1s;
+}
+
+@keyframes cardGlow1 {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.1);
+    }
+}
+
+@keyframes cardGlow2 {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.15);
+    }
+}
+
+@keyframes cardGlow3 {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cards-display {
+        gap: 1rem;
+    }
+
+    .time-card {
+        width: 100px;
+        height: 140px;
+    }
+
+    .card-label {
+        font-size: 0.7rem;
+    }
+
+    .card-value {
+        font-size: 3rem;
+    }
+
+    .card-icon {
+        font-size: 1.5rem;
+    }
+
+    .card-separator {
+        font-size: 2.5rem;
+    }
+
+    .floating-date {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,71 @@
+.theme-selector-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-selector-btn {
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid currentColor;
+    background: rgba(0, 0, 0, 0.3);
+    color: inherit;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.theme-selector-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px currentColor;
+}
+
+.theme-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 200px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.theme-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-option.active {
+    background: rgba(0, 206, 209, 0.3);
+    border-left: 3px solid #00CED1;
+}
+
+.theme-preview {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid;
+    backdrop-filter: blur(10px);
+}
+
+.theme-option span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}

@@ -1,0 +1,163 @@
+.alarm-widget {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    min-width: 300px;
+}
+
+.alarm-widget h3 {
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.alarm-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.alarm-time-input,
+.alarm-label-input {
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    color: inherit;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    outline: none;
+}
+
+.alarm-time-input:focus,
+.alarm-label-input:focus {
+    border-color: #00CED1;
+    box-shadow: 0 0 10px rgba(0, 206, 209, 0.5);
+}
+
+.alarm-add-btn {
+    padding: 10px;
+    border: 2px solid #00ff00;
+    background: transparent;
+    color: #00ff00;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.alarm-add-btn:hover {
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.alarms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.no-alarms {
+    text-align: center;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.alarm-item.disabled {
+    opacity: 0.5;
+}
+
+.alarm-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.alarm-time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Orbitron', monospace;
+}
+
+.alarm-label {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.alarm-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.alarm-toggle {
+    padding: 6px 12px;
+    border: 2px solid currentColor;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.alarm-toggle.on {
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+.alarm-toggle.off {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.alarm-toggle:hover {
+    box-shadow: 0 0 10px currentColor;
+}
+
+.alarm-delete {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.alarm-delete:hover {
+    transform: scale(1.2);
+}
+
+body.dark .alarm-widget {
+    background: rgba(0, 20, 20, 0.8);
+    border-color: #00CED1;
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.3);
+}
+
+body.light .alarm-widget {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light .alarm-time-input,
+body.light .alarm-label-input {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #333;
+}

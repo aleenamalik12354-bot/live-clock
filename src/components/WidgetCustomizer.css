@@ -1,0 +1,120 @@
+.widget-customizer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.customizer-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.widget-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.widget-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+}
+
+body.light .widget-option {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.dark .widget-option {
+    background: rgba(0, 20, 20, 0.5);
+    border: 2px solid rgba(0, 206, 209, 0.3);
+    color: #fff;
+}
+
+.widget-option:hover {
+    transform: translateY(-5px);
+}
+
+body.dark .widget-option:hover {
+    border-color: #00CED1;
+    box-shadow: 0 0 20px rgba(0, 206, 209, 0.4);
+}
+
+.widget-option.active {
+    transform: translateY(-5px) scale(1.05);
+}
+
+body.light .widget-option.active {
+    background: rgba(255, 255, 255, 1);
+    border-color: #333;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .widget-option.active {
+    background: rgba(0, 206, 209, 0.2);
+    border-color: #00CED1;
+    box-shadow:
+        0 0 30px rgba(0, 206, 209, 0.6),
+        0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.widget-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+body.dark .widget-option.active .widget-icon {
+    filter: drop-shadow(0 0 10px #00CED1);
+}
+
+.widget-name {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+body.dark .widget-option.active .widget-name {
+    color: #00CED1;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.6);
+}
+
+.widget-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .widget-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .widget-option {
+        padding: 1rem 0.5rem;
+    }
+
+    .widget-icon {
+        font-size: 2rem;
+    }
+
+    .widget-name {
+        font-size: 0.8rem;
+    }
+}

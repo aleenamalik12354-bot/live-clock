@@ -1,0 +1,63 @@
+.battery-indicator {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+
+.battery-icon {
+    font-size: 1.2rem;
+}
+
+.battery-bar {
+    width: 60px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.battery-fill {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.battery-percentage {
+    font-family: 'Orbitron', monospace;
+    font-weight: bold;
+    min-width: 35px;
+}
+
+.charging-indicator {
+    color: #00ff00;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+body.light .battery-indicator {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #333;
+}

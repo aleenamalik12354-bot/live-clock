@@ -1,0 +1,115 @@
+{
+    "app": {
+        "title": "Reloj Moderno Avanzado",
+        "clock": "Reloj",
+        "calendar": "Calendario",
+        "stopwatch": "Cronómetro",
+        "alarm": "Alarma",
+        "worldClock": "Reloj Mundial",
+        "compass": "Brújula",
+        "weather": "Clima",
+        "sunMoon": "Sol y Luna",
+        "widgetStyle": "Estilo de Widget",
+        "settings": "Configuración"
+    },
+    "clock": {
+        "digital": "Digital",
+        "analog": "Analógico",
+        "timezone": "Zona Horaria"
+    },
+    "calendar": {
+        "months": [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"
+        ],
+        "days": [
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mié",
+            "Jue",
+            "Vie",
+            "Sáb"
+        ]
+    },
+    "stopwatch": {
+        "title": "Cronómetro",
+        "start": "Iniciar",
+        "stop": "Detener",
+        "lap": "Vuelta",
+        "reset": "Reiniciar",
+        "laps": "Vueltas"
+    },
+    "alarm": {
+        "title": "Alarmas",
+        "add": "Agregar",
+        "label": "Etiqueta (opcional)",
+        "noAlarms": "Sin alarmas",
+        "on": "ENCENDIDO",
+        "off": "APAGADO"
+    },
+    "theme": {
+        "light": "Claro",
+        "dark": "Oscuro",
+        "selectTheme": "Seleccionar Tema"
+    },
+    "worldClock": {
+        "title": "Reloj Mundial",
+        "addCity": "Agregar Ciudad",
+        "noCities": "Sin ciudades"
+    },
+    "compass": {
+        "title": "Brújula",
+        "north": "Norte",
+        "northeast": "Noreste",
+        "east": "Este",
+        "southeast": "Sureste",
+        "south": "Sur",
+        "southwest": "Suroeste",
+        "west": "Oeste",
+        "northwest": "Noroeste",
+        "notSupported": "Orientación del dispositivo no compatible",
+        "mobileOnly": "Esta función funciona mejor en dispositivos móviles",
+        "permissionRequired": "Se requiere permiso para acceder a la orientación del dispositivo",
+        "grantPermission": "Conceder Permiso",
+        "hint": "Mueve tu dispositivo para ver la brújula en acción"
+    },
+    "weather": {
+        "title": "Pronóstico del Tiempo",
+        "loading": "Cargando datos del clima...",
+        "error": "Error al cargar datos del clima",
+        "retry": "Reintentar",
+        "feelsLike": "Sensación térmica",
+        "humidity": "Humedad",
+        "wind": "Viento",
+        "forecast24h": "Pronóstico de 24 horas",
+        "mockNote": "Modo demo - Usando datos simulados"
+    },
+    "sunMoon": {
+        "title": "Rastreador de Sol y Luna",
+        "sunrise": "Amanecer",
+        "morning": "Mañana",
+        "afternoon": "Tarde",
+        "sunset": "Atardecer",
+        "evening": "Noche",
+        "night": "Noche"
+    },
+    "widgets": {
+        "title": "Personalizador de Widgets",
+        "default": "Predeterminado",
+        "analog": "Analógico",
+        "flipTimer": "Temporizador de Volteo",
+        "neonRing": "Anillo de Neón",
+        "floatingCards": "Tarjetas Flotantes"
+    }
+}

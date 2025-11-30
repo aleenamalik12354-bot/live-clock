@@ -1,0 +1,184 @@
+.neon-ring-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.rings-display {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.ring-background {
+    fill: none;
+    stroke-width: 8;
+    opacity: 0.2;
+}
+
+body.light .ring-background {
+    stroke: #333;
+}
+
+body.dark .ring-background {
+    stroke: #00CED1;
+}
+
+.ring-progress {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Seconds ring - cyan */
+.seconds-ring .ring-progress {
+    stroke: #00CED1;
+    filter: drop-shadow(0 0 10px #00CED1);
+    animation: ringGlow 2s ease-in-out infinite;
+}
+
+/* Minutes ring - green */
+.minutes-ring .ring-progress {
+    stroke: #0fa;
+    filter: drop-shadow(0 0 10px #0fa);
+    animation: ringGlow 2s ease-in-out infinite 0.3s;
+}
+
+/* Hours ring - gold */
+.hours-ring .ring-progress {
+    stroke: #FFD700;
+    filter: drop-shadow(0 0 10px #FFD700);
+    animation: ringGlow 2s ease-in-out infinite 0.6s;
+}
+
+@keyframes ringGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px currentColor);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 30px currentColor);
+    }
+}
+
+.center-time {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.digital-time {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+body.dark .digital-time {
+    color: #00CED1;
+    text-shadow:
+        0 0 10px rgba(0, 206, 209, 0.8),
+        0 0 20px rgba(0, 206, 209, 0.6),
+        0 0 30px rgba(0, 206, 209, 0.4);
+    animation: textPulse 3s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 10px rgba(0, 206, 209, 0.8),
+            0 0 20px rgba(0, 206, 209, 0.6),
+            0 0 30px rgba(0, 206, 209, 0.4);
+    }
+
+    50% {
+        text-shadow:
+            0 0 15px rgba(0, 206, 209, 1),
+            0 0 30px rgba(0, 206, 209, 0.8),
+            0 0 45px rgba(0, 206, 209, 0.6);
+    }
+}
+
+.ring-labels {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.ring-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.label-icon {
+    font-size: 1.5rem;
+}
+
+.seconds-color {
+    filter: drop-shadow(0 0 5px #00CED1);
+}
+
+.minutes-color {
+    filter: drop-shadow(0 0 5px #0fa);
+}
+
+.hours-color {
+    filter: drop-shadow(0 0 5px #FFD700);
+}
+
+body.dark .label-text {
+    color: #00CED1;
+}
+
+.ring-date {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .rings-display {
+        width: 300px;
+        height: 300px;
+    }
+
+    .digital-time {
+        font-size: 2rem;
+    }
+
+    .ring-labels {
+        gap: 1rem;
+    }
+
+    .ring-label {
+        font-size: 1rem;
+    }
+
+    .ring-date {
+        font-size: 1rem;
+    }
+}

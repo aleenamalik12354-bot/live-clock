@@ -1,0 +1,318 @@
+.compass-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    min-height: 500px;
+}
+
+.compass-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.compass-display {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 2rem 0;
+}
+
+.compass-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Light mode compass */
+body.light .compass-circle {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.8) 100%);
+    border: 4px solid #333;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode compass with neon glow */
+body.dark .compass-circle {
+    background: radial-gradient(circle, rgba(0, 20, 20, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+    border: 4px solid #00CED1;
+    box-shadow:
+        0 0 30px rgba(0, 206, 209, 0.6),
+        0 0 60px rgba(0, 206, 209, 0.4),
+        inset 0 0 30px rgba(0, 206, 209, 0.1);
+    animation: compassPulse 3s ease-in-out infinite;
+}
+
+@keyframes compassPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 30px rgba(0, 206, 209, 0.6),
+            0 0 60px rgba(0, 206, 209, 0.4),
+            inset 0 0 30px rgba(0, 206, 209, 0.1);
+    }
+
+    50% {
+        box-shadow:
+            0 0 40px rgba(0, 206, 209, 0.8),
+            0 0 80px rgba(0, 206, 209, 0.6),
+            inset 0 0 40px rgba(0, 206, 209, 0.2);
+    }
+}
+
+/* Cardinal directions */
+.compass-direction {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-direction.north {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ff4444;
+}
+
+body.dark .compass-direction.north {
+    color: #ff6666;
+    text-shadow: 0 0 10px #ff4444, 0 0 20px rgba(255, 68, 68, 0.5);
+}
+
+.compass-direction.east {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.compass-direction.south {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.compass-direction.west {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+body.dark .compass-direction {
+    text-shadow: 0 0 8px currentColor;
+}
+
+/* Degree markers */
+.degree-marker {
+    position: absolute;
+    width: 2px;
+    height: 8px;
+    background: currentColor;
+    top: 5px;
+    left: 50%;
+    margin-left: -1px;
+    transform-origin: 50% 155px;
+    opacity: 0.3;
+}
+
+.degree-marker.major {
+    height: 15px;
+    width: 3px;
+    margin-left: -1.5px;
+    opacity: 0.6;
+}
+
+body.dark .degree-marker {
+    background: #00CED1;
+}
+
+/* Compass arrow (fixed, pointing up) */
+.compass-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 80px solid #ff4444;
+    position: relative;
+    filter: drop-shadow(0 0 10px rgba(255, 68, 68, 0.8));
+}
+
+body.dark .arrow-head {
+    border-bottom-color: #ff6666;
+    filter: drop-shadow(0 0 15px rgba(255, 102, 102, 0.9));
+    animation: arrowGlow 2s ease-in-out infinite;
+}
+
+.arrow-tail {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 40px solid #666;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -2px;
+}
+
+body.dark .arrow-tail {
+    border-top-color: #888;
+}
+
+@keyframes arrowGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 15px rgba(255, 102, 102, 0.9));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 25px rgba(255, 102, 102, 1));
+    }
+}
+
+/* Center dot */
+.compass-center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, #ccc 100%);
+    border: 3px solid #333;
+    z-index: 15;
+}
+
+body.dark .compass-center-dot {
+    background: radial-gradient(circle, #0ff 0%, #0fa 100%);
+    border-color: #00CED1;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.8);
+}
+
+/* Compass info */
+.compass-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.heading-display {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+body.dark .heading-display {
+    color: #00CED1;
+    text-shadow: 0 0 10px rgba(0, 206, 209, 0.8);
+}
+
+.direction-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.direction-label {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff4444;
+}
+
+body.dark .direction-label {
+    color: #ff6666;
+    text-shadow: 0 0 15px rgba(255, 102, 102, 0.8);
+}
+
+.direction-name {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.compass-hint-text {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Error states */
+.compass-error {
+    text-align: center;
+    padding: 2rem;
+}
+
+.compass-error h2 {
+    margin-bottom: 1rem;
+}
+
+.compass-error p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.compass-hint {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.permission-button {
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid currentColor;
+    background: transparent;
+    color: inherit;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.permission-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px currentColor;
+    transform: scale(1.05);
+}
+
+body.dark .permission-button:hover {
+    box-shadow: 0 0 20px #00CED1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .compass-display {
+        width: 280px;
+        height: 280px;
+    }
+
+    .heading-display {
+        font-size: 2.5rem;
+    }
+
+    .direction-label {
+        font-size: 2rem;
+    }
+}

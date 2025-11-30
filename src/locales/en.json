@@ -1,0 +1,115 @@
+{
+  "app": {
+    "title": "Advanced Modern Clock",
+    "clock": "Clock",
+    "calendar": "Calendar",
+    "stopwatch": "Stopwatch",
+    "alarm": "Alarm",
+    "worldClock": "World Clock",
+    "compass": "Compass",
+    "weather": "Weather",
+    "sunMoon": "Sun & Moon",
+    "widgetStyle": "Widget Style",
+    "settings": "Settings"
+  },
+  "clock": {
+    "digital": "Digital",
+    "analog": "Analog",
+    "timezone": "Timezone"
+  },
+  "calendar": {
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "days": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ]
+  },
+  "stopwatch": {
+    "title": "Stopwatch",
+    "start": "Start",
+    "stop": "Stop",
+    "lap": "Lap",
+    "reset": "Reset",
+    "laps": "Laps"
+  },
+  "alarm": {
+    "title": "Alarms",
+    "add": "Add",
+    "label": "Label (optional)",
+    "noAlarms": "No alarms set",
+    "on": "ON",
+    "off": "OFF"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "selectTheme": "Select Theme"
+  },
+  "worldClock": {
+    "title": "World Clock",
+    "addCity": "Add City",
+    "noCities": "No cities added"
+  },
+  "compass": {
+    "title": "Compass",
+    "north": "North",
+    "northeast": "Northeast",
+    "east": "East",
+    "southeast": "Southeast",
+    "south": "South",
+    "southwest": "Southwest",
+    "west": "West",
+    "northwest": "Northwest",
+    "notSupported": "Device orientation not supported",
+    "mobileOnly": "This feature works best on mobile devices",
+    "permissionRequired": "Permission required to access device orientation",
+    "grantPermission": "Grant Permission",
+    "hint": "Move your device to see the compass in action"
+  },
+  "weather": {
+    "title": "Weather Forecast",
+    "loading": "Loading weather data...",
+    "error": "Failed to load weather data",
+    "retry": "Retry",
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "forecast24h": "24-Hour Forecast",
+    "mockNote": "Demo mode - Using mock weather data"
+  },
+  "sunMoon": {
+    "title": "Sun & Moon Tracker",
+    "sunrise": "Sunrise",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "sunset": "Sunset",
+    "evening": "Evening",
+    "night": "Night"
+  },
+  "widgets": {
+    "title": "Widget Customizer",
+    "default": "Default",
+    "analog": "Analog",
+    "flipTimer": "Flip Timer",
+    "neonRing": "Neon Ring",
+    "floatingCards": "Floating Cards"
+  }
+}
