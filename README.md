@@ -34,7 +34,7 @@ A feature-rich, animated React application offering a suite of time-management a
 
 ## 🚀 Live Demo
 
-[View Project on GitHub](https://github.com/aleenamalik12354-bot/live-clock)
+[Click here to view the Live Clock](https://aleenamalik12354-bot.github.io/live-clock/)
 
 ## 💻 Installation & Setup
 
